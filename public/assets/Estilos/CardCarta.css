@@ -1,0 +1,101 @@
+/* /public/assets/Estilos/CardCarta.css */
+
+.card-carta {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-carta:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-carta img {
+  width: 100%;
+  max-height: 200px; /* Ajusta la altura máxima según necesites */
+  object-fit: contain;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.card-carta h3 {
+  color: #2c3e50; /* Azul oscuro */
+  font-size: 1.5em;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.card-carta h2 {
+  color: #777;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.card-carta p {
+  color: #555;
+  font-size: 0.95em;
+  margin-bottom: 8px;
+}
+
+.card-carta button {
+  background-color: #2ecc71; /* Verde llamativo */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.card-carta button:hover {
+  background-color: #27ae60; /* Verde más oscuro al pasar el ratón */
+}
+
+.card-carta button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.card-carta p:last-child {
+  color: #e67e22; /* Naranja para "¡En el carrito!" */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Ajustes para pantallas móviles (ancho máximo de 600px) */
+@media (max-width: 600px) {
+  .card-carta h3 {
+    font-size: 1.3em;
+    margin-top: 10px;
+    margin-bottom: 3px;
+  }
+
+  .card-carta h2 {
+    font-size: 1em;
+    margin-bottom: 8px;
+  }
+
+  .card-carta p {
+    font-size: 0.9em;
+    margin-bottom: 6px;
+  }
+
+  .card-carta button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}

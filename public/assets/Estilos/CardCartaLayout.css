@@ -1,0 +1,29 @@
+/* /public/assets/Estilos/CardCartaLayout.css */
+
+.lista-cartas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Mínimo 250px de ancho, se ajusta (para pantallas pequeñas por defecto) */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Para pantallas de escritorio (ancho mínimo de 992px), forzamos un ancho mínimo para 3 columnas */
+@media (min-width: 992px) {
+  .lista-cartas {
+    grid-template-columns: repeat(3, minmax(320px, 1fr)); /* Fuerza 3 columnas con un ancho mínimo de 320px */
+  }
+}
+
+/* Para pantallas móviles (ancho máximo de 600px), mostramos 1 columna */
+@media (max-width: 600px) {
+  .lista-cartas {
+    grid-template-columns: 1fr; /* Fuerza 1 columna */
+  }
+}
+
+/* Para tabletas (ancho máximo de 991px), intentamos 2 columnas con un ancho mínimo */
+@media (max-width: 991px) and (min-width: 601px) {
+  .lista-cartas {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Intenta 2 columnas con un ancho mínimo de 300px */
+  }
+}

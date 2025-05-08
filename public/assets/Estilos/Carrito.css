@@ -1,0 +1,209 @@
+/* src/pages/Carrito.css */
+
+.pagina-carrito {
+    padding: 20px;
+    font-family: sans-serif;
+  }
+  
+  .pagina-carrito h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .lista-items-carrito {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para cada item del carrito */
+  .item-carrito {
+    display: flex; /* Habilita flexbox para alinear los elementos */
+    align-items: center; /* Alinea verticalmente los elementos */
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    margin-bottom: 10px;
+  }
+  
+  .imagen-item-carrito {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .detalles-item-carrito {
+    flex-grow: 1; /* Permite que los detalles ocupen el espacio restante */
+  }
+  
+  .nombre-item-carrito {
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .precio-item-carrito {
+    color: #555;
+    font-size: 0.9em;
+    margin-bottom: 3px;
+  }
+  
+  .cantidad-item-carrito {
+    color: #777;
+    font-size: 0.85em;
+  }
+  
+  .boton-eliminar-item {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease;
+    margin-left: auto; /* Empuja el botón a la derecha */
+  }
+  
+  .boton-eliminar-item:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Estilos para el contenedor total y botones */
+  .contenedor-total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 30px;
+  }
+  
+  .contenedor-total strong {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .botones-carrito {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .boton-vaciar-carrito {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton-vaciar-carrito:hover {
+    background-color: #d68910;
+  }
+  
+  .seguir-comprando {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .seguir-comprando:hover {
+    color: #2980b9;
+    text-decoration: underline;
+  }
+  
+  .carrito-vacio {
+    padding: 30px;
+    text-align: center;
+    color: #777;
+  }
+  
+  .carrito-vacio h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+  
+  /* Estilos para dispositivos móviles (ancho máximo de 768px) */
+  @media (max-width: 768px) {
+    .item-carrito {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+  
+    .imagen-item-carrito {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+  
+    .detalles-item-carrito {
+      margin-bottom: 10px;
+    }
+  
+    .boton-eliminar-item {
+      margin-left: 0;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 0.75em;
+      padding: 8px 10px;
+    }
+  
+    .contenedor-total {
+      align-items: center;
+    }
+  
+    .botones-carrito {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  .boton-finalizar-compra {
+    background-color: #28a745; /* Un color verde para indicar acción de pago */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton-finalizar-compra:hover {
+    background-color: #1e7e34;
+  }
+
+  .cantidad-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cantidad-control button {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 8px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 0.8em;
+  }
+  
+  .cantidad-control button:hover {
+    background-color: #eee;
+  }
+  
+  .cantidad-control span {
+    font-size: 0.9em;
+    margin: 0 10px;
+  }
