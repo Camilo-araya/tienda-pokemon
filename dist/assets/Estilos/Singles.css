@@ -1,0 +1,155 @@
+/* /public/assets/Estilos/Singles.css */
+
+.container-singles {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f6f8;
+  min-height: 80vh;
+}
+
+.container-singles h2 {
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 15px; /* Reducimos el margen inferior del título */
+  text-align: center;
+  border-bottom: 3px solid #ffcb05;
+  padding-bottom: 6px; /* Reducimos el padding inferior del título */
+}
+
+.lista-regulaciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Aumentamos el minmax ligeramente */
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.regulacion-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.regulacion-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.regulacion-pokemon-imagen {
+  width: 100%;
+  height: 200px;
+  object-fit: contain; /* Muestra la imagen completa manteniendo su proporción */
+  background-color: #f9f9f9; /* Añadimos un fondo por si hay espacios vacíos */
+  border-bottom: 2px solid #eee;
+}
+
+.regulacion-nombre {
+  color: #2c3e50;
+  font-size: 1.8em;
+  margin: 20px 0 15px;
+  font-weight: bold;
+}
+
+.regulacion-ver-boton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 28px;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.regulacion-ver-boton:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para tabletas (ancho máximo de 992px) */
+@media (max-width: 992px) {
+  .container-singles {
+    padding: 30px 15px;
+  }
+
+  .container-singles h2 {
+    font-size: 2.2em;
+    margin-bottom: 12px; /* Reducimos el margen inferior en tabletas */
+    padding-bottom: 5px; /* Reducimos el padding inferior en tabletas */
+  }
+
+  .lista-regulaciones {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+
+  .regulacion-pokemon-imagen {
+    height: 180px;
+  }
+
+  .regulacion-nombre {
+    font-size: 1.6em;
+    margin: 15px 0 12px;
+  }
+
+  .regulacion-ver-boton {
+    padding: 10px 24px;
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+}
+
+/* Para pantallas de escritorio (ancho mínimo de 993px), limitamos a un máximo de 4 columnas */
+@media (min-width: 993px) {
+  .lista-regulaciones {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mantenemos el minmax */
+    /* Calculamos el número de columnas basado en el ancho máximo y el minmax */
+    grid-template-columns: repeat(auto-fit, minmax(calc(1200px / 4), 1fr)); /* Intenta con un ancho máximo de 4 columnas */
+  }
+}
+
+/* Estilos para móviles (ancho máximo de 600px) */
+@media (max-width: 600px) {
+  .container-singles {
+    padding: 20px 10px;
+  }
+
+  .container-singles h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px; /* Reducimos el margen inferior en móviles */
+    padding-bottom: 4px; /* Reducimos el padding inferior en móviles */
+  }
+
+  .lista-regulaciones {
+    grid-template-columns: 1fr; /* Una sola columna en móviles */
+    gap: 20px;
+  }
+
+  .regulacion-card {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .regulacion-pokemon-imagen {
+    height: 150px;
+  }
+
+  .regulacion-nombre {
+    font-size: 1.4em;
+    margin: 12px 0 10px;
+  }
+
+  .regulacion-ver-boton {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+  }
+}
