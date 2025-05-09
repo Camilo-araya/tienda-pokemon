@@ -20,23 +20,16 @@ jobs:
         run: npm install # O yarn install
 
       - name: Build
-        run: |
-          npm run build
-          echo "Contenido de la carpeta dist después del build:"
-          ls -al dist
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         run: |
-          echo "Directorio de trabajo actual: $(pwd)"
-          ls -al
-          cd dist
-          echo "Directorio actual después de cd dist: $(pwd)"
-          ls -al
           git checkout --orphan gh-pages
           git reset --hard
           rm -rf *
-          cp -r ./* ../
-          cd ..
+          find dist -type f -print0 | xargs -0 -I {} cp "{}" .
+          find dist -type d -print0 | xargs -0 -I {} mkdir -p "{}"
+          find dist -type f -print0 | xargs -0 -I {} cp "{}" .
           git add .
-          git commit -m "Desplegar sitio a gh-pages (navegando a dist)"
+          git commit -m "Desplegar sitio a gh-pages (copia explícita de archivos y carpetas)"
           git push origin gh-pages --force
