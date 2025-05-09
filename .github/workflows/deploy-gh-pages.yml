@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Necesario para obtener el historial completo
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -20,25 +22,16 @@ jobs:
         run: npm install # O yarn install
 
       - name: Build
-        run: |
-          echo "Directorio de trabajo actual (antes del build): $(pwd)"
-          ls -al
-          npm run build
-          echo "Contenido de la carpeta dist después del build:"
-          ls -al dist
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         run: |
-          echo "Directorio de trabajo actual (deploy): $(pwd)"
-          ls -al
-          cd dist
-          echo "Directorio actual después de cd dist (deploy): $(pwd)"
-          ls -al
           git checkout --orphan gh-pages
           git reset --hard
           rm -rf *
-          cp -r ./* ../
-          cd ..
+          cp -r * .  # Copia todo el contenido del repositorio
+          rm -rf dist # Elimina la carpeta dist anterior (si existe)
+          cp -r dist/. . # Copia el contenido del build de Vite, sobreescribiendo
           git add .
-          git commit -m "Desplegar sitio a gh-pages (verificando capitalización)"
+          git commit -m "Desplegar sitio a gh-pages (copia completa y sobreescritura)"
           git push origin gh-pages --force
