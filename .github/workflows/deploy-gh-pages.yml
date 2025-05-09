@@ -1,5 +1,10 @@
 name: Desplegar a GitHub Pages
 
+permissions:
+  contents: write # Permite al flujo de trabajo escribir contenido del repositorio
+  pages: write    # Permite al flujo de trabajo escribir en GitHub Pages
+  id-token: write # Permite al flujo de trabajo solicitar un token de OpenID Connect
+
 on:
   push:
     branches: [main] # Desencadena el flujo de trabajo en cada push a la rama 'main'
