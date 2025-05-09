@@ -1,0 +1,31 @@
+name: Desplegar a GitHub Pages
+
+on:
+  push:
+    branches: [main] # Desencadena el flujo de trabajo en cada push a la rama 'main'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # O la versión de Node.js que usaste para construir
+
+      - name: Install dependencies
+        run: npm install # O yarn install
+
+      - name: Build
+        run: npm run build # O yarn build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages # La rama donde se desplegarán los archivos
+          folder: dist # La carpeta con los archivos construidos
+          clean: true # Elimina archivos anteriores en la rama 'gh-pages'
