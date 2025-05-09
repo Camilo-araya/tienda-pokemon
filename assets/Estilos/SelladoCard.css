@@ -1,0 +1,41 @@
+/* Estilos para el componente ProductoSelladoCard */
+.producto-sellado-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+  display: flex; /* Para alinear elementos verticalmente si es necesario */
+  flex-direction: column;
+  align-items: center;
+}
+
+.sellado-imagen {
+  width: 180px; /* Aumentamos el ancho */
+  height: 150px; /* Mantenemos la altura */
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.sellado-nombre {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.sellado-precio {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.sellado-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.sellado-button:hover {
+  background-color: #0056b3;
+}

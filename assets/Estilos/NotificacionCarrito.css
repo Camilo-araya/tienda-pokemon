@@ -1,0 +1,22 @@
+/* src/components/NotificacionCarrito.css */
+.notificacion-carrito {
+  position: absolute; /* Cambiado a 'absolute' para posicionarse dentro del contenedor relativo */
+  top: 10px;      /* Ajusta la distancia desde la parte superior de la carta */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9em;
+  z-index: 10;      /* Asegura que esté por encima del contenido de la carta */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+}
+
+.notificacion-carrito.activa {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0s;
+}
