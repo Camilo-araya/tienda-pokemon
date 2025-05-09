@@ -1,13 +1,8 @@
 name: Desplegar a GitHub Pages
 
-permissions:
-  contents: write # Permite al flujo de trabajo escribir contenido del repositorio
-  pages: write    # Permite al flujo de trabajo escribir en GitHub Pages
-  id-token: write # Permite al flujo de trabajo solicitar un token de OpenID Connect
-
 on:
   push:
-    branches: [main] # Desencadena el flujo de trabajo en cada push a la rama 'main'
+    branches: [main]
 
 jobs:
   build-and-deploy:
@@ -19,7 +14,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # O la versión de Node.js que usaste para construir
+          node-version: '18' # Ajusta a tu versión de Node.js
 
       - name: Install dependencies
         run: npm install # O yarn install
@@ -28,10 +23,11 @@ jobs:
         run: npm run build # O yarn build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages # La rama donde se desplegarán los archivos
-          folder: dist # La carpeta con los archivos construidos
-          clean: true # Elimina archivos anteriores en la rama 'gh-pages'
-          root: .      # ESTA ES LA LÍNEA QUE DEBES AGREGAR
+        run: |
+          git checkout --orphan gh-pages
+          git reset --hard
+          rm -rf *
+          cp -r dist/. .
+          git add .
+          git commit -m "Desplegar sitio a gh-pages"
+          git push origin gh-pages --force
