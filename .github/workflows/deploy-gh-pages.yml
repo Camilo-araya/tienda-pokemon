@@ -20,7 +20,10 @@ jobs:
         run: npm install # O yarn install
 
       - name: Build
-        run: npm run build # O yarn build
+        run: |
+          npm run build
+          echo "Contenido de la carpeta dist después del build:"
+          ls -al dist
 
       - name: Deploy to GitHub Pages
         run: |
