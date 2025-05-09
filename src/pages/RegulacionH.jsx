@@ -5,10 +5,10 @@ import '/public/assets/Estilos/CardCartaLayout.css';
 
 function RegulacionH() {
   const cartasRegulacionH = [
-    { id: 1, cantidad: 4, nombre: 'Iron Thorns ex', edicion: "Twilight Masquerade", imagen: '/assets/img/RegulacionH/iron-thorns-ex.png', precio: 5000 },
-    { id: 2, cantidad: 2, nombre: "Galvantula ex", edicion: "Stellar Crown", imagen: '/assets/img/RegulacionH/galvantula-ex.png', precio: 2000 },
-    { id: 3, cantidad: 1, nombre: 'Milotic ex - español', edicion: "Surging Sparks", imagen: '/assets/img/RegulacionH/milotic-ex.png', precio: 7000 },
-    { id: 4, cantidad: 1, nombre: 'Milotic ex - español', edicion: "Surging Sparks", imagen: '/assets/img/RegulacionH/milotic-ex-ultra-rare.png', precio: 14000 },
+    { id: 1, cantidad: 4, nombre: 'Iron Thorns ex', edicion: "Twilight Masquerade", imagen: '/public/assets/img/RegulacionH/iron-thorns-ex.png', precio: 5000 },
+    { id: 2, cantidad: 2, nombre: "Galvantula ex", edicion: "Stellar Crown", imagen: '/public/assets/img/RegulacionH/galvantula-ex.png', precio: 2000 },
+    { id: 3, cantidad: 1, nombre: 'Milotic ex - español', edicion: "Surging Sparks", imagen: '/public/assets/img/RegulacionH/milotic-ex.png', precio: 7000 },
+    { id: 4, cantidad: 1, nombre: 'Milotic ex - español', edicion: "Surging Sparks", imagen: '/public/assets/img/RegulacionH/milotic-ex-ultra-rare.png', precio: 14000 },
     { id: 5, cantidad: 1, nombre: 'Flygon ex - español', edicion: "Surging Sparks", imagen: '/public/assets/img/RegulacionH/flygon-ex.png', precio: 3000 },
     { id: 6, cantidad: 2, nombre: 'Archaludon ex', edicion: "Surging Sparks", imagen: '/public/assets/img/RegulacionH/archaludon-ex.png', precio: 12000 },
     { id: 7, cantidad: 2, nombre: 'Latias ex', edicion: "Surging Sparks", imagen: '/public/assets/img/RegulacionH/latias-ex.png', precio: 12000 },
