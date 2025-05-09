@@ -25,11 +25,15 @@ jobs:
       - name: Deploy to GitHub Pages
         run: |
           echo "Directorio de trabajo actual: $(pwd)"
-          ls -al ./dist
+          ls -al
+          cd dist
+          echo "Directorio actual después de cd dist: $(pwd)"
+          ls -al
           git checkout --orphan gh-pages
           git reset --hard
           rm -rf *
-          cp -r ./dist/. .
+          cp -r ./* ../
+          cd ..
           git add .
-          git commit -m "Desplegar sitio a gh-pages (intento de copia explícito)"
+          git commit -m "Desplegar sitio a gh-pages (navegando a dist)"
           git push origin gh-pages --force
