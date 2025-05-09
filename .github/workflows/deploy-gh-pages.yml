@@ -34,3 +34,4 @@ jobs:
           branch: gh-pages # La rama donde se desplegarán los archivos
           folder: dist # La carpeta con los archivos construidos
           clean: true # Elimina archivos anteriores en la rama 'gh-pages'
+          root: .      # ESTA ES LA LÍNEA QUE DEBES AGREGAR
